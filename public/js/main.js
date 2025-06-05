@@ -11,7 +11,8 @@ document.getElementById("search-btn").addEventListener("click", async () => {
 
     const resultsSection = document.getElementById("results-section");
     if (results.length === 0) {
-      resultsSection.innerHTML = `<p>No results found for "${query}".</p>`;
+      resultsSection.innerHTML = "<p>No products found.</p>";
+      return;
     }
 
     resultsSection.innerHTML = results
@@ -28,6 +29,5 @@ document.getElementById("search-btn").addEventListener("click", async () => {
       .join("");
   } catch (error) {
     console.error("Error fetching search results:", error);
-    alert("An error occurred while fetching search results. Please try again.");
   }
 });
